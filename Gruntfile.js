@@ -6,8 +6,15 @@ module.exports = function(grunt) {
         concat: {
             js: {
                 src: [
-                    // 'bower_components/jquery/dist/jquery.js',
-                    // 'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+                    'bower_components/typeahead.js/dist/typeahead.bundle.js',
+                    'bower_components/handlebars/handlebars.js',
+                    'bower_components/list.js/dist/list.js',
+                    'bower_components/leaflet/dist/leaflet.js',
+                    'bower_components/leaflet.markercluster/dist/leaflet.markercluster-src.js',
+                    'bower_components/leaflet.locatecontrol/src/L.Control.Locate.js',
+                    'bower_components/leaflet-groupedlayercontrol/src/leaflet.groupedlayercontrol.js',
                     'src/js/bootleaf.js'
                 ],
                 dest: 'assets/js/bootleaf.js'
