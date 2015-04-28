@@ -1,0 +1,24 @@
+{
+  "name": "bootleaf-sass-template",
+  "version": "0.0.1",
+  "description": "Template SASS version of Bootleaf",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vicchi/bootleaf-sass-template.git"
+  },
+  "keywords": [
+    "bootleaf",
+    "sass",
+    "template"
+  ],
+  "author": "Gary Gale <gary@vicchi.org> (http://www.garygale.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vicchi/bootleaf-sass-template/issues"
+  },
+  "homepage": "https://github.com/vicchi/bootleaf-sass-template"
+}
