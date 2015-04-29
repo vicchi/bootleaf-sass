@@ -51,7 +51,7 @@ module.exports = function(grunt) {
                 options: {
                     process: function(content, srcpath) {
                         // Fixup Leaflet image paths to use /assets/img and not /images
-                        return content.replace(/images\//g, '../../assets/img');
+                        return content.replace(/images\//g, '../../assets/img/');
                     }
                 },
                 files: [
