@@ -1,6 +1,54 @@
 BootLeaf
 ========
 
+## Requirements
+
+### Node.js
+
+Native installers for most operating systems, as well as the source code are available on nodejs.org's download page. If you're using a Mac and Homebrew then try the following.
+
+```bash
+$ brew install node
+```
+
+### Ruby
+
+Most operating systems come with Ruby preinstalled, but it's a good idea to check.
+
+```bash
+$ ruby -v
+```
+
+### Grunt
+
+Grunt is installed via `npm`; if you've installed Node, you already have `npm` installed for you.
+
+```bash
+$ npm install -g grunt-cli
+```
+
+### Bower
+
+Bower is also installed via `npm`.
+
+```bash
+$ npm install -g bower
+```
+
+### Sass
+
+```bash
+$ gem install sass
+```
+
+## Building Bootleaf
+
+Clone the [Bootleaf Sass Template](https://github.com/vicchi/bootleaf-sass-template) GitHub repository
+
+```bash
+$ git clone git@github.com:vicchi/bootleaf-sass-template.git
+```
+
 A simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/).
 
 ### Demo:

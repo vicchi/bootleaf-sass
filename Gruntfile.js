@@ -3,6 +3,11 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        clean: {
+            deploy: {
+                src: ['deploy']
+            }
+        },
         concat: {
             js: {
                 src: [
@@ -117,6 +122,18 @@ module.exports = function(grunt) {
                         filter: 'isFile'
                     }
                 ]
+            },
+            deploy: {
+                files: [
+                    {
+                        expand: true,
+                        src: [
+                            'index.html',
+                            'assets/**/*'
+                        ],
+                        dest: 'deploy'
+                    }
+                ]
             }
         },
         cssmin: {
@@ -168,5 +185,6 @@ module.exports = function(grunt) {
             grunt.fail.warn('Warning triggered; failing horribly');
         }
     });
-    grunt.registerTask('build', ['nodsstore', 'warn-fail', 'copy', 'sass', 'cssmin', 'jshint', 'concat', 'uglify']);
+    grunt.registerTask('build', ['nodsstore', 'warn-fail', 'copy:fonts', 'copy:edit', 'copy:csstoscss', 'copy:img', 'sass', 'cssmin', 'jshint', 'concat', 'uglify']);
+    grunt.registerTask('deploy', ['clean', 'build', 'copy:deploy']);
 }
