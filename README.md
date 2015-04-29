@@ -1,11 +1,18 @@
-BootLeaf
-========
+# BootLeaf
+
+## What is Bootleaf?
+
+A simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/).
+
+## What is Bootleaf-Sass then?
+
+A fork of Bootleaf, using Sass for generating CSS and with a Grunt driven build workflow to make it simpler to use Bootleaf as a template for your projects. Simpler if you use Sass and like Grunt that is. It worked for me, which was why I wrote this.
 
 ## Requirements
 
 ### Node.js
 
-Native installers for most operating systems, as well as the source code are available on nodejs.org's download page. If you're using a Mac and Homebrew then try the following.
+Native installers for most operating systems, as well as the source code are available on nodejs.org's [download](https://nodejs.org/download/) page. If you're using a Mac and [Homebrew](http://brew.sh/) then try the following.
 
 ```bash
 $ brew install node
@@ -43,18 +50,37 @@ $ gem install sass
 
 ## Building Bootleaf
 
-Clone the [Bootleaf Sass Template](https://github.com/vicchi/bootleaf-sass-template) GitHub repository
+Clone the [Bootleaf-Sass](https://github.com/vicchi/bootleaf-sass) GitHub repository.
 
 ```bash
-$ git clone git@github.com:vicchi/bootleaf-sass-template.git
+$ git clone git@github.com:vicchi/bootleaf-sass.git
 ```
 
-A simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/).
+Install all component dependencies.
 
-### Demo:
-http://bmcbride.github.io/bootleaf/
+```bash
+$ bower install
+$ npm install
+```
 
-### Features:
+Build all Javascript and CSS files using the latest version of Bootleaf's components.
+
+```bash
+$ grunt build
+```
+
+All of Bootleaf's files, with the exception of the `index.html` landing page, is contained within the `assets` directory. You can also package up all of the required files into a single `dist` directory, suitable for uploading to your web server of choice, using Grunt's `deploy` command.
+
+```bash
+$ grunt deploy
+```
+
+
+## Demo
+
+http://vicchi.github.io/bootleaf-sass/. See also the original Bootleaf demo here: http://bmcbride.github.io/bootleaf/
+
+## Features
 * Fullscreen mobile-friendly map template with responsive Navbar and modal placeholders
 * jQuery loading of external GeoJSON files
 * Logical multiple layer marker clustering via the [leaflet marker cluster plugin](https://github.com/Leaflet/Leaflet.markercluster)
@@ -62,7 +88,7 @@ http://bmcbride.github.io/bootleaf/
 * Responsive sidebar feature list with sorting and filtering via [list.js](http://listjs.com/)
 * Marker icons included in grouped layer control via the [grouped layer control plugin](https://github.com/ismyrnow/Leaflet.groupedlayercontrol)
 
-### Screenshots:
+## Screenshots
 
 ![Desktop](http://bmcbride.github.io/bootleaf/screenshots/bootleaf-desktop1.png)
 
