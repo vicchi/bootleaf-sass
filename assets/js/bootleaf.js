@@ -21967,7 +21967,7 @@ var boroughs = L.geoJson(null, {
     });
   }
 });
-$.getJSON("data/boroughs.geojson", function (data) {
+$.getJSON("assets/data/boroughs.geojson", function (data) {
   boroughs.addData(data);
 });
 
@@ -22081,7 +22081,7 @@ var subwayLines = L.geoJson(null, {
     });
   }
 });
-$.getJSON("data/subways.geojson", function (data) {
+$.getJSON("assets/data/subways.geojson", function (data) {
   subwayLines.addData(data);
 });
 
@@ -22131,7 +22131,7 @@ var theaters = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/DOITT_THEATER_01_13SEPT2010.geojson", function (data) {
+$.getJSON("assets/data/DOITT_THEATER_01_13SEPT2010.geojson", function (data) {
   theaters.addData(data);
   map.addLayer(theaterLayer);
 });
@@ -22174,7 +22174,7 @@ var museums = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
+$.getJSON("assets/data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
   museums.addData(data);
 });
 
