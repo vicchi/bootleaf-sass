@@ -35,6 +35,77 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        copy: {
+            fonts: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'bower_components/fontawesome/fonts',
+                        src: ['**/*'],
+                        dest: 'assets/fonts',
+                        filter: 'isFile'
+                    }
+                ]
+            },
+            edit: {
+                options: {
+                    process: function(content, srcpath) {
+                        // Fixup Leaflet image paths to use /assets/img and not /images
+                        return content.replace(/images\//g, '../../assets/img');
+                    }
+                },
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        cwd: 'bower_components',
+                        src: [
+                            'leaflet/dist/*.css',
+                            '!**/*.min.css'
+                        ],
+                        dest: 'src/sass',
+                        filter: 'isFile',
+                        ext: '.scss',
+                        extDot: 'last'
+                    }
+                ]
+            },
+            csstoscss: {
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        cwd: 'bower_components',
+                        src: [
+                            'leaflet.locatecontrol/dist/*.css',
+                            'leaflet.markercluster/dist/*.css',
+                            'leaflet-groupedlayercontrol/src/*.css',
+                            '!**/*.min.css'
+                        ],
+                        dest: 'src/sass',
+                        filter: 'isFile',
+                        ext: '.scss',
+                        extDot: 'last'
+                    }
+                ]
+            },
+            img: {
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: [
+                            'src/img/**/*.ico',
+                            'src/img/**/*.png',
+                            'bower_components/leaflet/dist/images/**/*.png',
+                            'bower_components/Leaflet.awesome-markers/dist/images/**/*.png'
+                        ],
+                        dest: 'assets/img',
+                        filter: 'isFile'
+                    }
+                ]
+            }
+        },
         watch: {
             options: {
                 livereload: true
@@ -71,5 +142,5 @@ module.exports = function(grunt) {
             grunt.fail.warn('Warning triggered; failing horribly');
         }
     });
-    grunt.registerTask('build', ['nodsstore', 'warn-fail', 'sass', 'jshint', 'concat']);
+    grunt.registerTask('build', ['nodsstore', 'warn-fail', 'copy', 'sass', 'jshint', 'concat']);
 }

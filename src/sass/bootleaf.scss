@@ -1,4 +1,10 @@
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "bower_components/fontawesome/scss/font-awesome";
+@import "leaflet";
+@import "L.Control.Locate";
+@import "MarkerCluster";
+@import "MarkerCluster.Default";
+@import "leaflet.groupedlayercontrol";
 
 html, body, #container {
   height: 100%;
