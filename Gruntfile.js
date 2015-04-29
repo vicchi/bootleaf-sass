@@ -23,6 +23,19 @@ module.exports = function(grunt) {
         jshint: {
             beforeconcat: ['src/js/bootleaf.js']
         },
+        uglify: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'assets/js',
+                        src: ['*.js', '!*.min.js'],
+                        dest: 'assets/js',
+                        ext: '.min.js'
+                    }
+                ]
+            }
+        },
         sass: {
             dist: {
                 options: {
@@ -106,6 +119,19 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        cssmin: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'assets/css',
+                        src: ['*.css', '!*.min.css'],
+                        dest: 'assets/css',
+                        ext: '.min.css'
+                    }
+                ]
+            }
+        },
         watch: {
             options: {
                 livereload: true
@@ -116,11 +142,11 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['src/sass/*.scss'],
-                tasks: ['sass']
+                tasks: ['sass', 'cssmin']
             },
             js: {
                 files: ['src/js/*.js'],
-                tasks: ['jshint', 'concat']
+                tasks: ['jshint', 'concat', 'uglify']
             }
         }
     });
@@ -142,5 +168,5 @@ module.exports = function(grunt) {
             grunt.fail.warn('Warning triggered; failing horribly');
         }
     });
-    grunt.registerTask('build', ['nodsstore', 'warn-fail', 'copy', 'sass', 'jshint', 'concat']);
+    grunt.registerTask('build', ['nodsstore', 'warn-fail', 'copy', 'sass', 'cssmin', 'jshint', 'concat', 'uglify']);
 }
