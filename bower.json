@@ -23,7 +23,7 @@
   ],
   "devDependencies": {
     "bootstrap-sass-official": "~3.3.4",
-    "typeahead.js": "~0.11.1",
+    "typeahead.js": "~0.10.5",
     "list.js": "~1.1.1",
     "leaflet": "~0.7.3",
     "leaflet.markercluster": "~0.4.0",
