@@ -448,7 +448,8 @@ var locateControl = L.control.locate({
     weight: 1,
     clickable: false
   },
-  icon: "icon-direction",
+  icon: "fa fa-map-marker",
+  iconLoading: "fa fa-spinner fa-spin",
   metric: false,
   strings: {
     title: "My location",
